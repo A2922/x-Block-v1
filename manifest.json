@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Unified Blocker Extension",
+    "version": "1.0",
+    "description": "Blocks file downloads and copy-paste actions in the browser.",
+    "permissions": [
+      "activeTab",
+      "downloads",
+      "storage",
+      "cookies",
+      "tabs"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
